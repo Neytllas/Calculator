@@ -16,71 +16,85 @@
           </div>
           <div class="row mt-2 mb-2">
               <div class="col">
-                <button type="button btn-primary w-100" class="btn btn-primary">7</button>
+                <button class="btn btn-primary w-100" data-value="7" onclick="onRowClick(this)">7</button>
               </div>
 
               <div class="col">
-                <button type="button btn-primary w-100" class="btn btn-primary">8</button>
+                <button class="btn btn-primary w-100" data-value="8" onclick="onRowClick(this)">8</button>
               </div>
 
               <div class="col">
-                <button type="button btn-primary w-100" class="btn btn-primary">9</button>
+                <button class="btn btn-primary w-100" data-value="9" onclick="onRowClick(this)">9</button>
               </div> 
 
               <div class="col">
-                <button type="button btn-primary w-100" class="btn btn-warning">x</button> 
+                <button class="btn btn-warning w-100" data-value="*" onclick="onRowClick(this)">*</button> 
               </div>
           </div>
 
           <div class="row mb-2">
             <div class="col">
-                <button type="button btn-primary w-100" class="btn btn-primary">4</button>
+                <button class="btn btn-primary w-100" data-value="4" onclick="onRowClick(this)">4</button>
               </div>
 
               <div class="col">
-                <button type="button btn-primary w-100" class="btn btn-primary">5</button>
+                <button class="btn btn-primary w-100" data-value="5" onclick="onRowClick(this)">5</button>
               </div>
 
               <div class="col">
-                <button type="button btn-primary w-100" class="btn btn-primary">6</button>
+                <button class="btn btn-primary w-100" data-value="6" onclick="onRowClick(this)">6</button>
               </div> 
               
               <div class="col">
-                <button type="button btn-primary w-100" class="btn btn-warning">/</button> 
+                <button class="btn btn-warning w-100" data-value="/" onclick="onRowClick(this)">/</button> 
               </div>
           </div>
 
-        <div class="row">
-            <div class="col mb-2">
-                <button type="button btn-primary w-100" class="btn btn-primary">1</button>
+        <div class="row mb-2">
+            <div class="col">
+                <button class="btn btn-primary w-100" data-value="1" onclick="onRowClick(this)">1</button>
               </div>
 
               <div class="col">
-                <button type="button btn-primary w-100" class="btn btn-primary">2</button>
+                <butto class="btn btn-primary w-100" data-value="2" onclick="onRowClick(this)">2</butto>
               </div>
 
               <div class="col">
-                <button type="button btn-primary w-100" class="btn btn-primary">3</button>
+                <button class="btn btn-primary w-100" data-value="3" onclick="onRowClick(this)">3</button>
               </div> 
               
               <div class="col">
-                <button type="button btn-primary w-100" class="btn btn-warning">+</button> 
+                <button class="btn btn-warning w-100" data-value="+" onclick="onRowClick(this)">+</button> 
               </div>
           </div>
 
         <div class="row">
             <div class="col">
-                <button type="button btn-primary w-100" class="btn btn-primary">0</button>
+                <button class="btn btn-primary w-100" data-value="0" onclick="onRowClick(this)">0</button>
               </div>
 
               <div class="col">
-                <button type="button btn-primary w-100" class="btn btn-primary">=</button>
+                <button class="btn btn-primary w-100" data-value="=" onclick="onCountClick(this)">=</button>
               </div>
           </div>
 
       </div>
 
+      <script>
+        function onRowClick(button) 
+        {
+          let textField = document.getElementById("textField"); 
+          let newValue = textField.value + button.dataset.value;
+          textField.value = newValue;
+        }
 
+        function onCountClick(button)
+        {
+          let textField = document.getElementById("textField");
+          let code = textField.value;
+          textField.value = eval(code);
+        }
+      </script>
 
 
 
